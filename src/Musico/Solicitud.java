@@ -8,6 +8,7 @@ public class Solicitud {
     private LocalDate fechaSolicitud;
     private LocalDate fechaAutorizacion;
     private String compania;
+    private Composicion composicion;
 
     public Solicitud(String nombre, LocalDate fechaSolicitud, LocalDate fechaAutorizacion, String compania) {
         if (fechaAutorizacion.isBefore(fechaSolicitud)){
@@ -16,6 +17,8 @@ public class Solicitud {
         this.fechaSolicitud = fechaSolicitud;
         this.fechaAutorizacion = fechaAutorizacion;
         this.compania = compania;
+
+        composicion.addSolicitud(this);
     }
 
     public String getNombre() {

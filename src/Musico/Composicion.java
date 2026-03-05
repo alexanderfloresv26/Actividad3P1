@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Composicion {
-
     private String titulo;
     private Duration duracion;
     private String genero;
@@ -36,15 +35,10 @@ public class Composicion {
     }
 
     public String getTitulo() {return titulo;}
-
     public Duration getDuracion() {return duracion;}
-
     public String getGenero() {return genero;}
-
     public LocalDate getFechaRegistro() {return fechaRegistro;}
-
     public LocalDate getFechaEstreno() {return fechaEstreno;}
-
     public List<Solicitud> getSolicitudes() {return solicitudes;}
 
     @Override
