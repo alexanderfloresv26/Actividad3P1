@@ -8,17 +8,16 @@ public class Solicitud {
     private LocalDate fechaSolicitud;
     private LocalDate fechaAutorizacion;
     private String compania;
-    private Composicion composicion;
 
-    public Solicitud(String nombre, LocalDate fechaSolicitud, LocalDate fechaAutorizacion, String compania, Composicion composicion) {
-        if (fechaAutorizacion.isBefore(fechaSolicitud)){throw new IllegalArgumentException("Error en la fecha de autorizacion");}
+    public Solicitud(String nombre, LocalDate fechaSolicitud, LocalDate fechaAutorizacion, String compania) {
+        if (fechaAutorizacion.isBefore(fechaSolicitud)){
+            throw new IllegalArgumentException("Error en la fecha de autorizacion");
+        }
+
         this.nombre = nombre;
         this.fechaSolicitud = fechaSolicitud;
         this.fechaAutorizacion = fechaAutorizacion;
         this.compania = compania;
-        this.composicion = composicion;
-
-        composicion.addSolicitud(this);
     }
 
     public String getNombre() {
