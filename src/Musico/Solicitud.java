@@ -10,31 +10,23 @@ public class Solicitud {
     private String compania;
 
     public Solicitud(String nombre, LocalDate fechaSolicitud, LocalDate fechaAutorizacion, String compania) {
-        if (fechaAutorizacion.isBefore(fechaSolicitud)){
-            throw new IllegalArgumentException("Error en la fecha de autorizacion");
+        if (fechaAutorizacion.isAfter(fechaSolicitud)){
+            this.nombre = nombre;
+            this.fechaSolicitud = fechaSolicitud;
+            this.fechaAutorizacion = fechaAutorizacion;
+            this.compania = compania;
+        } else {
+            System.out.println("Error en la fecha de autorizacion");
         }
-
-        this.nombre = nombre;
-        this.fechaSolicitud = fechaSolicitud;
-        this.fechaAutorizacion = fechaAutorizacion;
-        this.compania = compania;
     }
 
-    public String getNombre() {
-        return nombre;
-    }
+    public String getNombre() {return nombre;}
 
-    public LocalDate getFechaSolicitud() {
-        return fechaSolicitud;
-    }
+    public LocalDate getFechaSolicitud() {return fechaSolicitud;}
 
-    public LocalDate getFechaAutorizacion() {
-        return fechaAutorizacion;
-    }
+    public LocalDate getFechaAutorizacion() {return fechaAutorizacion;}
 
-    public String getCompania() {
-        return compania;
-    }
+    public String getCompania() {return compania;}
 
     @Override
     public String toString() {
